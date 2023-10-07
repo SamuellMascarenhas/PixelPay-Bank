@@ -1,0 +1,104 @@
+<!--  <?php
+    session_start();
+?>
+
+<?php
+    require_once("Conn.php");
+    require_once("userUsuario.php");
+
+    $formData = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    if(!empty($formData['addUser'])){
+        $createUser = new usuario();
+        $createUser->formData = $formData;
+        $result = $createUser->create();
+
+        if($result){
+            $_SESSION['msgSucesso'] = "Usuário cadastrado com sucesso";
+        } else{
+            $_SESSION['msgFail']="Usuário não cadastrado";
+        }
+        if(isset($_SESSION['msgSucesso'])){
+            echo $_SESSION['msgSucesso'];
+            unset($_SESSION['msgSucesso']);
+        }
+        if(isset($_SESSION['msgFail'])){
+            echo $_SESSION['msgFail'];
+            unset ($_SESSION['msgFail']);
+        }
+    }
+?> --> 
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PixelPay Bank - Cadastre-se</title>
+        <link rel="stylesheet" href="estilos/indexstyle.css">
+        <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+       
+    
+    </head>
+    <body>
+         <!--Inicio do Header-->
+        <header>
+            <div class="logo"><H1>Pixel</H1><h2>Pay</h2></div>
+            <div class="nav-bar">
+               <a href="index.html">Home</a>
+              
+                <a href="sobrenos.html">Sobre Nós</a>
+                
+                <a href="formularioUsuario.html">Quero ser PixiePay</a>
+                <a href="login.html" class="login-button">Login</a>
+            </div>
+    
+           
+        </header>
+    <!--Fim do Header-->
+
+    <!--inicio do main e +-->
+    <main>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>PixelPay Bank</h1>
+                <p>Seu Futuro Financeiro Começa Aqui!</p>
+            </div>
+            <div class="form-cad">
+                <div class="cad">
+                    <h3>Se torne PixelPay!</h3>
+                    <form method="post" name="createUser">
+                        <label  for="iusuario">Nome</label>
+                        <input id="iusuario" type="text" placeholder="Nome completo" name="nome" required></input>
+
+                        <label for="iemail">Email</label>
+            <input id="iemail" type="email" placeholder="Digite o seu e-mail" name="email" required></input>
+            
+            <label for="isenha">Password</label>
+            <input id="isenha" type="password" placeholder="Digite a sua senha" name="senha" required></input> 
+
+            <div class="button-cad">
+                <button type="submit" value="Cadastrar" name="addUser" onclick="location.href='index.html'">Cadastrar</button>
+                
+            </div>
+            <p>Já faz parte da PixelPay? <a href="login.html">Login</a></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <!--fim do main e +-->
+
+    <!--Inicio do Footer-->
+    <footer>
+        <p>&copy; 2023 PixelPay Bank. Todos os direitos reservados.</p>
+        
+    </footer>
+    <footer class="footer-cred">
+        <div class="footer-cred">
+            <p><b>Desenvolvido por</b> Samuel Mascarenhas & David Cris &copy;</p>
+        </div>
+    </footer>
+    <!--Fim do Footer-->
+</body>
+</html>

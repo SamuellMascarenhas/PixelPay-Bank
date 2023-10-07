@@ -1,0 +1,398 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #0EC43E;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    margin: 0 5px;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: .6rem;
+    font-weight: 50;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.logo h1{
+    color: #000000;
+}
+.logo h2{
+    color: #b6e6c3;
+}
+.nav-bar{
+    display: flex;
+    align-items:center;
+}
+.nav-bar a {
+    text-decoration:none;
+    margin:10px;
+    padding: 7px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    color: #F2F2F2;
+    transition: all .5s ease;
+    box-shadow: inset 0 0 0 0 #11F74F;
+     position: relative;
+  display: inline-block;
+    
+}
+
+
+.nav-bar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    
+    background-color: #11F74F;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s ease;
+}
+
+.nav-bar a:hover::before {
+    transform: scaleX(1);
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.nav-bar a:hover {
+    animation: bounce 0.5s;
+ 
+}
+
+
+/* fim cabeçalho*/
+
+
+/* CSS PAGE HOME*/
+.hero {
+    text-align: center;
+    background-image: url('../imagens/wepik-export-20230826021411GOcp.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+.hero-content h1{
+    color: #11F74F;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4.5rem;
+}
+.hero-content p{
+    color: #2A7A3F;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #0EC43E;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+.cta-button:hover{
+    transform: scale(110%);
+    transition: 0.3s;
+    border: 2px solid var(--accent);
+    outline-color: rgba(255,255,255,0);
+    outline-offset: 15px;
+    color: var(--accent);
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem;
+}
+
+.feature {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f8f8f8;
+   
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+    display: block;
+}
+.feature h2{
+    font-family: 'Space Grotesk', sans-serif;
+    color: #2A7A3F;
+}
+.feature p {
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+.feature img {
+    width: 90px;
+    height: 80px;
+    transition: all .3s ease;
+}
+.feature img:hover{
+  transform: scale(120%);
+  transition: .3s;
+}
+
+.feature-conteudo{
+    background-image: url('../imagens/wepik-export-20230826022115k2um.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10rem;
+}
+.conteudo{
+    max-width: 800px;
+    align-items: center;
+    
+}
+.conteudo h1{
+    color: #11F74F;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3.5rem;
+    transition: all .3s ease;
+}
+.conteudo h1:hover{
+    padding-left: 15px;
+    transition: .3s;
+}
+.conteudo p{
+    color: #2A7A3F;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.9rem;
+}
+.feature-conteudo2{
+    background-image: url('../imagens/wepik-export-20230826023342YhV3.png') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 10rem;
+}
+/* CSS PAGE HOME*/
+
+/* CSS PAGE CADASTRO*/
+.form-cad{
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 50%;
+    margin: auto;
+    border: solid 1px rgba(169, 169, 169, 0.342);
+    border-radius: 5px;
+
+  
+  
+    
+}
+.form-cad label{
+    color: #2A7A3F;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.form-cad h3{
+    font-size: 1.5rem;
+    color: #11F74F;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 10px;
+}
+.form-cad p{
+    border-radius: 10px 2px 10px px;
+    background-color: #cccccc5d;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 10px;
+    font-family: 'Oswald', sans-serif;
+ 
+}
+.form-cad p a{
+    padding: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+   color: #2A7A3F;
+   font-size: 1rem;
+   transition: all .3s ease;
+}
+.form-cad p a:hover{
+   text-decoration: underline;
+padding-left: 8px;
+}
+
+.form-cad .cad input{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    transition: all .5s ease;
+ }
+
+
+.form-cad .cad input:hover{
+    border:solid .1px #0EC43E;
+    transition: .3s;
+ }
+ .button-cad button{
+    border-radius: 3px;
+    color: #F2F2F2;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    background-color:  #11F74F;
+    padding: 5px;
+    width: 50%;
+    margin-bottom: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    }
+    .button-cad button:hover{
+        transition: 0.5s;
+        transform: scale(110%);
+    }
+/* CSS PAGE CADASTRO*/
+
+
+
+/*FOOTER GERAL*/
+footer {
+    text-align: center;
+    background-color: #0EC43E;
+    padding: 2px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.footer-cred{
+    display: flex;
+    background-color: #F2F2F2; 
+    justify-content: center;
+}
+/*FOOTER GERAL*/
+
+
+/*RESPONSIVIDADE*/
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .nav-bar {
+       flex-wrap: wrap;
+       display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .nav-bar a {
+        margin: 5px;
+    }
+    .hero {
+        padding: 6rem 0;
+        background-position: right center;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 14px;
+    }
+    .features{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .feature{
+        margin-bottom: 20px;
+    }
+    .feature img {
+        width: 50px;
+        height: 40px;
+    }
+    .feature h2 {
+        font-size: 1.5rem;
+       
+    }
+    .feature p {
+        font-size: 1.2rem;
+    }
+    .feature-conteudo{
+        padding: 6rem 0;
+        background-position: center;
+    }
+    .feature-conteudo2{
+        background-position: center;
+    }
+    .conteudo h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    .conteudo p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .feature-conteudo2 h1{
+        font-size: 2rem;
+        position: relative;
+        left: -130px;
+        top: -80px;
+    }
+    .feature-conteudo2 p{
+        display: flex;
+        text-align: left;
+        position: relative;
+        left: -80%;
+        top: -80px;
+    }
+    .form-cad{
+        width: 80%;
+    }
+    .form-cad .cad input{
+        width: 100%;
+    }
+    .form-login{
+
+        padding: 6rem 0;
+        background-position: center;
+    }
+    
+}
+
+/*RESPONSIVIDADE*/
